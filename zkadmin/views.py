@@ -1,7 +1,7 @@
 from django.shortcuts import render_to_response
 from django.conf import settings
 
-from zookeeper_dashboard.zkadmin.models import ZKServer
+from zkadmin.models import ZKServer
 
 ZOOKEEPER_SERVERS = getattr(settings,'ZOOKEEPER_SERVERS').split(',')
 

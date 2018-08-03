@@ -1,7 +1,7 @@
 from django.shortcuts import render_to_response
 import string
 
-from zookeeper_dashboard.zktree.models import ZNode
+from zktree.models import ZNode
 
 def istext(s, text_chars="".join(map(chr, range(32, 127))) + "\n\r\t\b"):
     if "\0" in s: return False

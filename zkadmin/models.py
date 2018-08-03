@@ -23,7 +23,8 @@ class ZKServer(object):
         try:
             stat = self.send_cmd('stat\n')
             envi = self.send_cmd('envi\n')
-        except:
+        except Exception, e:
+            print(e)
             self.mode = "Unavailable"
             self.sessions = []
             self.version = "Unknown"
@@ -56,10 +57,13 @@ class ZKServer(object):
 
     def send_cmd(self, cmd):
         tn = telnetlib.Telnet(self.host, self.port)
-
         tn.write(cmd)
-
-        result = tn.read_all()
+        result = None
+        for i in xrange(3):
+            if result is None:
+                try:
+                    result = tn.read_all()
+                except:
+                    pass
         tn.close()
-
         return result

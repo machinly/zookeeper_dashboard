@@ -1,6 +1,7 @@
-from django.conf.urls.defaults import *
+from django.conf.urls import *
+from zkadmin import views
 
-urlpatterns = patterns('zookeeper_dashboard.zkadmin.views',
-    (r'^server/(?P<server_id>\d+)/$','detail'), 
-    (r'^$','index'), 
-)
+urlpatterns = [
+    url(r'^server/(?P<server_id>\d+)/$', views.detail), 
+    url(r'^$',views.index), 
+]

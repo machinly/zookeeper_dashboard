@@ -75,11 +75,17 @@ No ACLs exist for this znode
 
 {% if znode.children %}
 <table>
+  <tr class="{% cycle 'oddrow' 'evenrow' %}"><td><a href="/tree">/</a></td></tr>
+  <tr class="{% cycle 'oddrow' 'evenrow' %}"><td><a href="../">../</a></td></tr>
   {% for child in znode.children %}
-  <tr class="{% cycle 'oddrow' 'evenrow' %}"><td><a href="{{child|urlencode}}">{{child}}</a></td></tr>
+  <tr class="{% cycle 'oddrow' 'evenrow' %}"><td><a href="{{child|urlencode}}/">{{child}}</a></td></tr>
 {% endfor %}
 </table>
 {% else %}
+<table>
+  <tr class="{% cycle 'oddrow' 'evenrow' %}"><td><a href="/tree">/</a></td></tr>
+  <tr class="{% cycle 'oddrow' 'evenrow' %}"><td><a href="../">../</a></td></tr>
+</table>
 No Children exist for this znode
 {% endif %}
 </div>
