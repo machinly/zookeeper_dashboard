@@ -17,7 +17,7 @@ import os
 
 ### ZooKeeper specific settings
 
-ZOOKEEPER_SERVERS = "10.1.196.36:2181,10.1.196.35:2181,10.1.196.62:2181"
+ZOOKEEPER_SERVERS = PARAMETER_ZOOKEEPER_SERVERS
 
 ### From here down are Django settings
 
@@ -40,9 +40,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'br=f3b1%5)k!2e@v34a5d8(fbcu^78m*9&wo!*5co7jf4akohw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["10.1.192.159","127.0.0.1"]
+ALLOWED_HOSTS = [PARAMETE_ALLOWED_HOSTS]
 
 
 # Application definition
